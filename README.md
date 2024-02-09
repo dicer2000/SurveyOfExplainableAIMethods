@@ -4,8 +4,8 @@
 
 These experiements were written in 2023 to support research being done for the research paper "Survey of Explainable AI Techniques for Vision Transformers"
 
-Researcher: Brett Huffman
-Faculty Advisor: Badri Adhikari, PhD
+**Researcher: Brett Huffman**\
+**Faculty Advisor: Badri Adhikari, PhD**
 
 We compared a number of explainability techniques for vision transformers by comparing their use, effectivness and complexity.  A varied number of implementations were used to test these methods.  Google Colab was utilized whenever possible.  In which case, you will find the implementation within the Notebooks folder, saved as a Jupiter notebook (.ipynb file).
 
