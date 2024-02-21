@@ -1,5 +1,5 @@
 # Python Explain - Occlusion Tester
-#(c) by Brett Huffman
+# by Brett Huffman
 
 #  Need: pip install tf-explain
 

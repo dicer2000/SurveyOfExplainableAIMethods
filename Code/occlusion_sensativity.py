@@ -1,5 +1,5 @@
 # Python Explain - Occlusion Sensativity
-#(c) by Brett Huffman
+# by Brett Huffman
 
 #  Need: pip install tf-explain
 
@@ -72,9 +72,7 @@ with open(mapping_file, "r") as f:
     lines = f.readlines()
 imagenet_int_to_str = [line.rstrip() for line in lines]
 
-img_url = "https://dl.fbaipublicfiles.com/dino/img.png"
 img_url = "https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/story_full_width/qxyqxqjtu_WW187785.jpg"
-#img_url = "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=724&q=80"
 
 image, preprocessed_image = load_image_from_url(img_url, model_type="original_vit")
 
@@ -148,34 +146,8 @@ def pred_fn(imgs):
 # Occlusion Analysis
 data = ([preprocessed_image], None)
 
-cla./ss_index = int(np.argmax(predictions))
+class_index = int(np.argmax(predictions))
 explainer = OcclusionSensitivity()
 # Compute Occlusion Sensitivity for patch_size 16
 grid = explainer.explain(data, vit_base_i21k_patch16_224, class_index, 16)
 explainer.save(grid, ".", "16.png")
-
-#temp_2, mask_2 = explanation.get_image_and_mask(explanation.top_labels[0], positive_only=False, num_features=3, hide_rest=False)
-
-# fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15,15))
-# ax1.imshow(mark_boundaries(temp_1, mask_1))
-# ax2.imshow(mark_boundaries(temp_2, mask_2))
-# ax1.axis('off')
-# ax2.axis('off')
-# ax1.set_title('')
-# ax2.set_title('')
-# fig.tight_layout()
-
-# plt.show()
-
-
-# def explanation_heatmap(exp, exp_class):
-#     '''
-#     Using heat-map to highlight the importance of each super-pixel for the model prediction
-#     '''
-#     dict_heatmap = dict(exp.local_exp[exp_class])
-#     heatmap = np.vectorize(dict_heatmap.get)(exp.segments) 
-#     plt.imshow(heatmap, cmap = 'RdBu', vmin  = -heatmap.max(), vmax = heatmap.max())
-#     plt.colorbar()
-#     plt.show()
-
-# explanation_heatmap(explanation, explanation.top_labels[0])

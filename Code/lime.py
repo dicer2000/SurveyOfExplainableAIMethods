@@ -1,7 +1,10 @@
 # Python Explain
-#(c) by Brett Huffman
+# by Brett Huffman
 
-#  Need: pip install -U gdown -q
+# Need to install all these libraries
+# gdown: pip install -U gdown -q
+# tensorflow: pip install tensorflow
+# skimage: pip install scikit-image
 
 
 import zipfile
@@ -73,7 +76,7 @@ with open(mapping_file, "r") as f:
     lines = f.readlines()
 imagenet_int_to_str = [line.rstrip() for line in lines]
 
-img_url = "https://dl.fbaipublicfiles.com/dino/img.png"
+# Load an image from the web and preprocess it.
 img_url = "https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/story_full_width/qxyqxqjtu_WW187785.jpg"
 #img_url = "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=724&q=80"
 
